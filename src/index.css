@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-text-filter-active: #3A7BFD;
+    --color-check1: #57DDFF;
+    --color-check2: #C058F3;
+    --color-main: #FAFAFA;
+    --color-text-classic: #E4E5F1;
+    --color-text-classic2: #D2D3DB;
+    --color-text-classic3: #9394A5;
+    --color-text-classic4: #484B6A;
+  }
+}
