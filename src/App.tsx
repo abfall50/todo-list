@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 import { Background } from './comps/Background';
 import { Bar } from './comps/Bar';
 import { Input } from './comps/Input';
@@ -17,6 +17,7 @@ export interface ElementsProps {
   onMouseLeave: () => void
   isComplete: boolean
   value: string
+  date: string
   id: string
 }
 
@@ -24,6 +25,7 @@ export interface Todo {
   id: string
   value: string
   isCompleted: boolean
+  date: string
 }
 
 export interface Hovering {
@@ -36,10 +38,16 @@ const App: React.FC = () => {
   const [isHover, setIsHover] = useState<Hovering>({isHover: false, id: ""})
   const [todos, setTodos] = useState<Todo[]>([])
 
-  const addTodo = (value: string) => {
+  useEffect(() => {
+    
+  }, [todos])
+
+  const addTodo = (value: string, date: string) => {
     const id = uuid()
+    if (value.trim() === "" || date === "")
+      return
     setTodos(
-      [...todos, {id: id, value: value, isCompleted: false,}]
+      [...todos, {id: id, value: value, isCompleted: false, date: date}]
     )
   }
 
@@ -51,8 +59,6 @@ const App: React.FC = () => {
     setIsHover({isHover: false, id: ""})
   }
 
-  console.log(todos)
-
   return (
     <div className='w-full h-full'>
     <Background>
@@ -60,9 +66,9 @@ const App: React.FC = () => {
         <Bar/>
         <Input addTodo={addTodo} />
         <ListBox>
-          {todos.map((todo) => {
+          {todos.sort((a, b) => +new Date(a.date) - +new Date(b.date)).map((todo) => {
             return (
-              <ListElement isHover={isHover} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} isComplete={todo.isCompleted} value={todo.value} id={todo.id} />
+              <ListElement isHover={isHover} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} isComplete={todo.isCompleted} value={todo.value} id={todo.id} date={todo.date} />
             )
           })}
         </ListBox>
