@@ -8,7 +8,7 @@ export const NormalState: React.FC<StateProps> = (props) => {
 			</div>
 			<span className="pl-8 font-['Josefin_Sans'] text-[20px] text-skin-color4 truncate grow">{props.value}</span>
 			<div className="w-2/12 h-full shrink-0 flex justify-center items-center">
-				<span className="font-['Josefin_Sans'] text-[20px] text-skin-color4 truncate">{props.date}</span>
+				<span className="font-['Josefin_Sans'] text-[20px] text-skin-color4 truncate">{props.periodicity}</span>
 			</div>
 			<div className="w-1/12 h-full shrink-0"></div>
 		</li>
