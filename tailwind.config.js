@@ -5,6 +5,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+
+      color: {
+        checke1: 'var(--color-check1)',
+        checke2: 'var(--color-check2)',
+      },
+
       backgroundColor: {
         skin: {
           check1: 'var(--color-check1)',
@@ -21,6 +27,16 @@ module.exports = {
           color4: 'var(--color-text-classic4)',
         }
       },
+      borderColor: {
+        skin: {
+          circle: 'var(--color-text-classic)'
+        }
+      },
+      caretColor: {
+        skin: {
+          caret: 'var(--color-text-filter-active)'
+        }
+      }
     },
   },
   plugins: [],
