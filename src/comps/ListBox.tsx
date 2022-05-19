@@ -1,5 +1,6 @@
 import { isPropertySignature } from "typescript";
 import { ChildrenProps } from "../App";
+import { FilterBar } from "./FilterBar";
 
 export function ListBox(props: ChildrenProps) {
 	const {children} = props
@@ -9,6 +10,7 @@ export function ListBox(props: ChildrenProps) {
 			<ul className="h-[85%] border rounded-md overflow-y-scroll">
 				{children}
 			</ul>
+			<FilterBar />
 		</div>
 	)
 }

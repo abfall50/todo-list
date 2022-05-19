@@ -10,7 +10,7 @@ export const CompleteState: React.FC<StateProps> = (props) => {
 			</div>
 			<span className="pl-8 font-['Josefin_Sans'] text-[20px] text-skin-color2 truncate line-through decoration-1 grow">{props.value}</span>
 			<div className="w-2/12 h-full shrink-0 flex justify-center items-center">
-				<span className="font-['Josefin_Sans'] text-[20px] text-skin-color4 truncate">{props.isHover?.isHover && props.id === props.isHover.id ? props.date : props.periodicity}</span>
+				<span className="font-['Josefin_Sans'] text-[20px] text-skin-color4 truncate line-through decoration-1">{props.isHover?.isHover && props.id === props.isHover.id ? props.date : props.periodicity}</span>
 			</div>
 			{props.isHover?.isHover && props.id === props.isHover.id 
 				?	<button className="w-1/12 h-full flex justify-center items-center shrink-0">
